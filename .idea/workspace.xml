@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="804dd4bd-fda9-4e00-bebf-5f3a440e0765" name="Default Changelist" comment="" />
+    <list default="true" id="804dd4bd-fda9-4e00-bebf-5f3a440e0765" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artview/templates/artview/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/artview/templates/artview/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artview/templates/artview/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/artview/templates/artview/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artview/templates/artview/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/artview/templates/artview/slider.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,37 +30,40 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="References" value="1" />
+          <entry key="References" value="2" />
           <entry key="css" value="4" />
-          <entry key="html" value="9" />
+          <entry key="html" value="13" />
           <entry key="jpg" value="1" />
           <entry key="js" value="6" />
-          <entry key="py" value="10" />
+          <entry key="py" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="13" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="6" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="10" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="References" value="1" />
           <entry key="css" value="2" />
-          <entry key="html" value="2574" />
+          <entry key="html" value="3178" />
           <entry key="js" value="7" />
           <entry key="py" value="218" />
+          <entry key="txt" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="2574" />
+          <entry key="HTML" value="3178" />
           <entry key="JavaScript" value="7" />
+          <entry key="PLAIN_TEXT" value="38" />
           <entry key="Python" value="218" />
         </counts>
       </usages-collector>
@@ -64,69 +72,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artview/templates/artview/slider.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artview/static/artview/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artview/templates/artview/backup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artwork_viewer/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artview/templates/artview/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-869">
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artview/static/artview/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/artview/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/artwork_viewer/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -134,22 +83,54 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/artview/templates/artview/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="153" column="4" lean-forward="true" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
+            <state relative-caret-position="1548">
+              <caret line="249" column="38" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="38" />
               <folding>
+                <element signature="n#style#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#3;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#!!top" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#1;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#script#0;n#!!top" />
-                <element signature="n#script#1;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artview/templates/artview/slider.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artview/templates/artview/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artwork_viewer/References">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -164,21 +145,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/artview/urls.py" />
         <option value="$PROJECT_DIR$/artwork_viewer/urls.py" />
-        <option value="$PROJECT_DIR$/artwork_viewer/References" />
         <option value="$PROJECT_DIR$/artview/static/artview/style.css" />
         <option value="$PROJECT_DIR$/artview/js/script.js" />
         <option value="$PROJECT_DIR$/artview/views.py" />
         <option value="$PROJECT_DIR$/artview/templates/artview/backup.html" />
-        <option value="$PROJECT_DIR$/artview/templates/artview/slider.html" />
         <option value="$PROJECT_DIR$/artview/static/artview/css/style.css" />
-        <option value="$PROJECT_DIR$/artview/templates/artview/base.html" />
         <option value="$PROJECT_DIR$/artwork_viewer/settings.py" />
         <option value="$PROJECT_DIR$/artview/static/artview/js/script.js" />
+        <option value="$PROJECT_DIR$/artwork_viewer/References" />
+        <option value="$PROJECT_DIR$/artview/templates/artview/base.html" />
+        <option value="$PROJECT_DIR$/artview/templates/artview/slider.html" />
         <option value="$PROJECT_DIR$/artview/templates/artview/home.html" />
       </list>
     </option>
@@ -212,29 +196,6 @@
               <item name="artwork_viewer" type="462c0819:PsiDirectoryNode" />
               <item name="artview" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artwork_viewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artwork_viewer" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artwork_viewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artwork_viewer" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="artwork_viewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="artwork_viewer" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="artview" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="artwork_viewer" type="b2602c69:ProjectViewProjectNode" />
@@ -419,11 +380,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.3432602" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="1" visible="true" weight="0.3291536" />
+      <window_info anchor="bottom" id="Version Control" order="1" visible="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" />
       <window_info anchor="bottom" id="Run" order="4" />
@@ -439,6 +401,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upload Image embedded to drag option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Image embedded to drag option" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/artview/static/artview/css/lightslider.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -446,13 +412,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/artview/js/script.js" />
-    <entry file="file://$PROJECT_DIR$/artwork_viewer/References">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="62" selection-start-column="62" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/artview/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -467,16 +426,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/artview/static/artview/img/cS-1.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/artview/templates/artview/slider.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/artview/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/artwork_viewer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -513,30 +462,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/artview/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artwork_viewer/References">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artview/templates/artview/slider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/artview/templates/artview/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-869">
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        <state relative-caret-position="141">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/artview/templates/artview/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="153" column="4" lean-forward="true" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
+        <state relative-caret-position="1548">
+          <caret line="249" column="38" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="38" />
           <folding>
+            <element signature="n#style#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#3;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#div#1;n#!!top" />
             <element signature="n#style#0;n#img#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#script#0;n#!!top" />
-            <element signature="n#script#1;n#!!top" />
           </folding>
         </state>
       </provider>
