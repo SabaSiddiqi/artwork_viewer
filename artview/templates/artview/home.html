@@ -151,6 +151,13 @@ img {vertical-align: middle;}
 
 </div>
 
+
+<input type='file' accept="image/png, image/jpeg" onchange="readURL(this);" />
+
+
+
+
+
 <br>
 <!-- Slide Thumbnails -->
 <div style="text-align:center;">
@@ -234,6 +241,23 @@ function showSlides(n) {
       },
     }
   }();
+</script>
+<script>
+
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#dragme')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
 </script>
 
 
