@@ -1,351 +1,319 @@
+{% extends 'artview/base.html' %}
 {% load static %}
-<!doctype html>
-<html>
-<head>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
 
-        <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Style for slider -->
 <style>
 
-body {
-	overflow: hidden;
+#container {
+  position:absolute;
+  background-color: black;
+}
+#dragme{
+  position: absolute;
 }
 
-#pane {
-	position: absolute;
-	width: 45%;
-	height: 45%;
-	top: 20%;
-	left: 20%;
 
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-	margin: 0;
-	padding: 0;
-	z-index: 99;
-	border: 2px solid purple;
-	background: #fefefe;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-#title {
-	font-family: monospace;
-	background: purple;
-	color: white;
-	font-size: 24px;
-	height: 30px;
-	text-align: center;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-#ghostpane {
-	background: #999;
-	opacity: 0.2;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-	width: 45%;
-	height: 45%;
-	top: 20%;
-	left: 20%;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
 
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	z-index: 98;
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
 
-	-webkit-transition: all 0.25s ease-in-out;
-	-moz-transition: all 0.25s ease-in-out;
-	-ms-transition: all 0.25s ease-in-out;
-	-o-transition: all 0.25s ease-in-out;
-	transition: all 0.25s ease-in-out;
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 </style>
+{% endblock %}
 
 
-</head>
+{% block content %}
 
-<body>
+<!-- Slides -->
+<div class="slideshow-container" id="clickbox" style="width:1000px; height:500px;">
+      <img id="dragme"
+           src="http://www.zpixel.com/staging/test/image.png"
+           onmousedown='mydragg.startMoving(this,"clickbox",event);'
+           onmousemove='mydragg.resize(this,"clickbox",event);'
+           onmouseup='mydragg.stopMoving("clickbox");'
 
-<div id="pane">
-	<div id="title">Resize, Drag or Snap Me!</div>
+           style="width: 200px;height: 100px;"/>
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img src="{% static 'artview/img/cS-1.jpg' %}" style="width:1000px; height:500px;">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img src="{% static 'artview/img/cS-2.jpg' %}" style="width:1000px; height:500px;">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img src="{% static 'artview/img/cS-3.jpg' %}" style="width:1000px; height:500px;">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 </div>
-<div id="ghostpane"></div>
 
+
+<input type='file' accept="image/png, image/jpeg" onchange="readURL(this);" />
+
+
+
+
+
+<br>
+<!-- Slide Thumbnails -->
+<div style="text-align:center;">
+    <img src="{% static 'artview/img/cS-1.jpg' %}" style="width:10%;cursor: pointer;" onclick="currentSlide(1)"/>
+    <img src="{% static 'artview/img/cS-2.jpg' %}" style="width:10%;cursor: pointer;" onclick="currentSlide(2)"/>
+    <img src="{% static 'artview/img/cS-3.jpg' %}" style="width:10%;cursor: pointer;" onclick="currentSlide(3)"/>
+</div>
+<p id="demo"></p>
+
+
+<!-- Slide programming -->
 <script>
-      /*
- * @author https://twitter.com/blurspline / https://github.com/zz85
- * See post @ http://www.lab4games.net/zz85/blog/2014/11/15/resizing-moving-snapping-windows-with-js-css/
- */
+var slideIndex = 1;
+showSlides(slideIndex);
 
-"use strict";
-
-// Minimum resizable area
-var minWidth = 60;
-var minHeight = 40;
-
-// Thresholds
-var FULLSCREEN_MARGINS = -10;
-var MARGINS = 4;
-
-// End of what's configurable.
-var clicked = null;
-var onRightEdge, onBottomEdge, onLeftEdge, onTopEdge;
-
-var rightScreenEdge, bottomScreenEdge;
-
-var preSnapped;
-
-var b, x, y;
-
-var redraw = false;
-
-var pane = document.getElementById('pane');
-var ghostpane = document.getElementById('ghostpane');
-
-function setBounds(element, x, y, w, h) {
-	element.style.left = x + 'px';
-	element.style.top = y + 'px';
-	element.style.width = w + 'px';
-	element.style.height = h + 'px';
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function hintHide() {
-  setBounds(ghostpane, b.left, b.top, b.width, b.height);
-  ghostpane.style.opacity = 0;
-
-  // var b = ghostpane.getBoundingClientRect();
-  // ghostpane.style.top = b.top + b.height / 2;
-  // ghostpane.style.left = b.left + b.width / 2;
-  // ghostpane.style.width = 0;
-  // ghostpane.style.height = 0;
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-
-// Mouse events
-pane.addEventListener('mousedown', onMouseDown);
-document.addEventListener('mousemove', onMove);
-document.addEventListener('mouseup', onUp);
-
-// Touch events
-pane.addEventListener('touchstart', onTouchDown);
-document.addEventListener('touchmove', onTouchMove);
-document.addEventListener('touchend', onTouchEnd);
-
-
-function onTouchDown(e) {
-  onDown(e.touches[0]);
-  e.preventDefault();
-}
-
-function onTouchMove(e) {
-  onMove(e.touches[0]);
-}
-
-function onTouchEnd(e) {
-  if (e.touches.length ==0) onUp(e.changedTouches[0]);
-}
-
-function onMouseDown(e) {
-  onDown(e);
-  e.preventDefault();
-}
-
-function onDown(e) {
-  calc(e);
-
-  var isResizing = onRightEdge || onBottomEdge || onTopEdge || onLeftEdge;
-
-  clicked = {
-    x: x,
-    y: y,
-    cx: e.clientX,
-    cy: e.clientY,
-    w: b.width,
-    h: b.height,
-    isResizing: isResizing,
-    isMoving: !isResizing && canMove(),
-    onTopEdge: onTopEdge,
-    onLeftEdge: onLeftEdge,
-    onRightEdge: onRightEdge,
-    onBottomEdge: onBottomEdge
-  };
-}
-
-function canMove() {
-  return x > 0 && x < b.width && y > 0 && y < b.height
-  && y < 30;
-}
-
-function calc(e) {
-  b = pane.getBoundingClientRect();
-  x = e.clientX - b.left;
-  y = e.clientY - b.top;
-
-  onTopEdge = y < MARGINS;
-  onLeftEdge = x < MARGINS;
-  onRightEdge = x >= b.width - MARGINS;
-  onBottomEdge = y >= b.height - MARGINS;
-
-  rightScreenEdge = window.innerWidth - MARGINS;
-  bottomScreenEdge = window.innerHeight - MARGINS;
-}
-
-var e;
-
-function onMove(ee) {
-  calc(ee);
-
-  e = ee;
-
-  redraw = true;
-
-}
-
-function animate() {
-
-  requestAnimationFrame(animate);
-
-  if (!redraw) return;
-
-  redraw = false;
-
-  if (clicked && clicked.isResizing) {
-
-    if (clicked.onRightEdge) pane.style.width = Math.max(x, minWidth) + 'px';
-    if (clicked.onBottomEdge) pane.style.height = Math.max(y, minHeight) + 'px';
-
-    if (clicked.onLeftEdge) {
-      var currentWidth = Math.max(clicked.cx - e.clientX  + clicked.w, minWidth);
-      if (currentWidth > minWidth) {
-        pane.style.width = currentWidth + 'px';
-        pane.style.left = e.clientX + 'px';
-      }
-    }
-
-    if (clicked.onTopEdge) {
-      var currentHeight = Math.max(clicked.cy - e.clientY  + clicked.h, minHeight);
-      if (currentHeight > minHeight) {
-        pane.style.height = currentHeight + 'px';
-        pane.style.top = e.clientY + 'px';
-      }
-    }
-
-    hintHide();
-
-    return;
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-
-  if (clicked && clicked.isMoving) {
-
-    if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
-      // hintFull();
-      setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight);
-      ghostpane.style.opacity = 0.2;
-    } else if (b.top < MARGINS) {
-      // hintTop();
-      setBounds(ghostpane, 0, 0, window.innerWidth, window.innerHeight / 2);
-      ghostpane.style.opacity = 0.2;
-    } else if (b.left < MARGINS) {
-      // hintLeft();
-      setBounds(ghostpane, 0, 0, window.innerWidth / 2, window.innerHeight);
-      ghostpane.style.opacity = 0.2;
-    } else if (b.right > rightScreenEdge) {
-      // hintRight();
-      setBounds(ghostpane, window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
-      ghostpane.style.opacity = 0.2;
-    } else if (b.bottom > bottomScreenEdge) {
-      // hintBottom();
-      setBounds(ghostpane, 0, window.innerHeight / 2, window.innerWidth, window.innerWidth / 2);
-      ghostpane.style.opacity = 0.2;
-    } else {
-      hintHide();
-    }
-
-    if (preSnapped) {
-      setBounds(pane,
-      	e.clientX - preSnapped.width / 2,
-      	e.clientY - Math.min(clicked.y, preSnapped.height),
-      	preSnapped.width,
-      	preSnapped.height
-      );
-      return;
-    }
-
-    // moving
-    pane.style.top = (e.clientY - clicked.y) + 'px';
-    pane.style.left = (e.clientX - clicked.x) + 'px';
-
-    return;
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
   }
-
-  // This code executes when mouse moves without clicking
-
-  // style cursor
-  if (onRightEdge && onBottomEdge || onLeftEdge && onTopEdge) {
-    pane.style.cursor = 'nwse-resize';
-  } else if (onRightEdge && onTopEdge || onBottomEdge && onLeftEdge) {
-    pane.style.cursor = 'nesw-resize';
-  } else if (onRightEdge || onLeftEdge) {
-    pane.style.cursor = 'ew-resize';
-  } else if (onBottomEdge || onTopEdge) {
-    pane.style.cursor = 'ns-resize';
-  } else if (canMove()) {
-    pane.style.cursor = 'move';
-  } else {
-    pane.style.cursor = 'default';
-  }
-}
-
-animate();
-
-function onUp(e) {
-  calc(e);
-
-  if (clicked && clicked.isMoving) {
-    // Snap
-    var snapped = {
-      width: b.width,
-      height: b.height
-    };
-
-    if (b.top < FULLSCREEN_MARGINS || b.left < FULLSCREEN_MARGINS || b.right > window.innerWidth - FULLSCREEN_MARGINS || b.bottom > window.innerHeight - FULLSCREEN_MARGINS) {
-      // hintFull();
-      setBounds(pane, 0, 0, window.innerWidth, window.innerHeight);
-      preSnapped = snapped;
-    } else if (b.top < MARGINS) {
-      // hintTop();
-      setBounds(pane, 0, 0, window.innerWidth, window.innerHeight / 2);
-      preSnapped = snapped;
-    } else if (b.left < MARGINS) {
-      // hintLeft();
-      setBounds(pane, 0, 0, window.innerWidth / 2, window.innerHeight);
-      preSnapped = snapped;
-    } else if (b.right > rightScreenEdge) {
-      // hintRight();
-      setBounds(pane, window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight);
-      preSnapped = snapped;
-    } else if (b.bottom > bottomScreenEdge) {
-      // hintBottom();
-      setBounds(pane, 0, window.innerHeight / 2, window.innerWidth, window.innerWidth / 2);
-      preSnapped = snapped;
-    } else {
-      preSnapped = null;
-    }
-
-    hintHide();
-
-  }
-
-  clicked = null;
-
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
 </script>
 
-</body>
-</html>
+<!-- https://jsfiddle.net/ryuofpaL/2/ -->
+<!-- Drag Script -->
+<script>
+  var mydragg = function(){
+    return {
+
+      move : function(divid,xpos,ypos){
+        divid.style.left = xpos + 'px';
+        divid.style.top = ypos + 'px';
+      },
+
+      <!-- divid - dragme container, container - clickbox  -->
+      startMoving : function (divid,container,evt){
+
+      	evt.preventDefault();
+        evt = evt || window.event;
+
+        var posX =  evt.clientX,
+                    posY = evt.clientY,
+                    divTop = divid.style.top,
+                    divLeft = divid.style.left,
+                    eWi = parseInt(divid.style.width),
+                    eHe = parseInt(divid.style.height),
+                    cWi = parseInt(document.getElementById(container).style.width),
+                    cHe = parseInt(document.getElementById(container).style.height);
+
+        document.getElementById(container).style.cursor='move';
+
+        <!-- convert to numbers, by removing px -->
+        divTop = divTop.replace('px','');
+        divLeft = divLeft.replace('px','');
+
+        var diffX = posX - divLeft,
+            diffY = posY - divTop;
+
+        document.onmousemove = function(evt){
+          evt = evt || window.event;
+
+          var posX = evt.clientX,
+              posY = evt.clientY,
+              aX = posX - diffX,
+              aY = posY - diffY;
+
+          if (aX < 0) aX = 0;
+          if (aY < 0) aY = 0;
+          if (aX + eWi > cWi) aX = cWi - eWi;
+          if (aY + eHe > cHe) aY = cHe -eHe;
+          mydragg.move(divid,aX,aY);
+        }
+      },
+      stopMoving : function(container){
+        var a = document.createElement('script');
+        document.getElementById(container).style.cursor='default';
+        document.onmousemove = function(){}
+      },
+
+      resize : function (divid,container,evt){
+        var posX = evt.clientX,
+            posY = evt.clientY,
+            divTop = divid.style.top,
+            divLeft = divid.style.left;
+
+
+            divTop = divTop.replace('px',''),
+            divLeft = divLeft.replace('px',''),
+            eWi = parseInt(divid.style.width),
+            eHe = parseInt(divid.style.height),
+            diffY = posY - divTop,
+            diffX = posX - divLeft;
+            aX = posX - diffX,
+            aY = posY - diffY;
+            d1=eHe - diffY
+            d2=diffX - eWi
+
+
+
+            document.getElementById("demo").innerHTML =
+            " divTop " + divTop + " posX " + posX + " diffX " + diffX + " diffY " + diffY + " aX " + aX + " aY " + aY + " d1 "
+            + d1 + " d2 " + d2
+            + " eWi " + eWi + " Height " + eHe;
+
+
+            if (  d1 > 40 || d1 <-45 ){
+                document.getElementById("dragme").style.cursor='n-resize';
+            } else if (  d1 < 5 || d1 >-5 ){
+                document.getElementById("dragme").style.cursor='e-resize';
+            } else  {
+                document.getElementById("dragme").style.cursor='default';
+            }
+
+        },
+    }
+  }();
+</script>
+<script>
+
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+
+                reader.onload = function (e) {
+                    $('#dragme')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+
+
+{% endblock %}
+
