@@ -125,7 +125,6 @@ img {vertical-align: middle;}
       <img id="dragme"
            src="http://www.zpixel.com/staging/test/image.png"
            onmousedown='mydragg.startMoving(this,"clickbox",event);'
-           onmousemove='mydragg.resize(this,"clickbox",event);'
            onmouseup='mydragg.stopMoving("clickbox");'
 
            style="width: 200px;height: 100px;"/>
@@ -255,12 +254,12 @@ function showSlides(n) {
         document.getElementById(container).style.cursor='default';
         document.onmousemove = function(){}
       },
-
-      resize : function (divid,container,evt){
+        <!-- resize : function (divid,container,evt){
         var posX = evt.clientX,
             posY = evt.clientY,
             divTop = divid.style.top,
             divLeft = divid.style.left;
+            cHe = parseInt(document.getElementById(container).style.height);
 
 
             divTop = divTop.replace('px',''),
@@ -271,15 +270,24 @@ function showSlides(n) {
             diffX = posX - divLeft;
             aX = posX - diffX,
             aY = posY - diffY;
-            d1=eHe - diffY
-            d2=diffX - eWi
+            d1=eHe - diffY;
+            d2=diffX - eWi;
+            a=eHe/2 * 0.9;
 
 
 
             document.getElementById("demo").innerHTML =
-            " divTop " + divTop + " posX " + posX + " diffX " + diffX + " diffY " + diffY + " aX " + aX + " aY " + aY + " d1 "
-            + d1 + " d2 " + d2
-            + " eWi " + eWi + " Height " + eHe;
+            " divTop " + divTop +
+            " posX " + posX +
+            " diffX " + diffX +
+            " diffY " + diffY +
+            " aX " + aX +
+            " aY " + aY +
+            " d1 " + d1 +
+            " d2 " + d2
+            + " eWi " + eWi
+            + " Height " + eHe
+            + "  a " + cHe ;
 
 
             if (  d1 > 40 || d1 <-45 ){
@@ -289,8 +297,10 @@ function showSlides(n) {
             } else  {
                 document.getElementById("dragme").style.cursor='default';
             }
+            },
+ -->
 
-        },
+
     }
   }();
 </script>
